@@ -75,7 +75,7 @@ def test_get_best_opportunity_returns_correct_cycle_with_correct_tickers():
         ShortTicker(symbol=symbols.Symbol('ETH/USDT'), last_price=2000),
     ]
     best_opportunity, best_profit = get_best_opportunity(tickers)
-    assert len(best_opportunity) >= 3  # Handling cycles with more than 3 tickers
+    assert len(best_opportunity) >= 3  
     assert best_profit == 4.5
     assert all(isinstance(ticker, ShortTicker) for ticker in best_opportunity)
 
@@ -93,6 +93,6 @@ def test_get_best_opportunity_returns_correct_cycle_with_multiple_tickers():
         ShortTicker(symbol=symbols.Symbol('BTC/TUSD'), last_price=32500),
     ]
     best_opportunity, best_profit = get_best_opportunity(tickers)
-    assert len(best_opportunity) >= 3  # Handling cycles with more than 3 tickers
+    assert len(best_opportunity) >= 3  
     assert round(best_profit, 3) == 5.775
     assert all(isinstance(ticker, ShortTicker) for ticker in best_opportunity)
