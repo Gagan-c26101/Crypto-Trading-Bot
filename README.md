@@ -16,7 +16,7 @@ Start detection by running:
 
 python3 main.py
 
-## working inside a Python virtual environment
+## It works inside a Python virtual environment
 
 python3 -m venv .venv
 
