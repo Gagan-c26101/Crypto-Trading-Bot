@@ -65,7 +65,7 @@ def test_get_best_opportunity_returns_correct_triplet_with_multiple_tickers():
     ]
     best_opportunity, best_profit = get_best_triangular_opportunity(tickers)
     assert len(best_opportunity) == 3
-    assert round(best_profit, 3) == 5.526 # 5.526315789473684
+    assert round(best_profit, 3) == 5.526 
     assert all(isinstance(ticker, ShortTicker) for ticker in best_opportunity)
 
 def test_get_best_opportunity_returns_correct_cycle_with_correct_tickers():

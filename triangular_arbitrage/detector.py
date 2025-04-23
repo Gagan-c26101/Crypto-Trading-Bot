@@ -33,7 +33,6 @@ def is_delisted_symbols(exchange_time, ticker,
 
 
 def get_top_200_tickers(tickers):
-    # Sort tickers by volume and take the top 200
     sorted_tickers = sorted(
         tickers.items(),
         key=lambda item: item[1].get('quoteVolume', 0),
@@ -108,7 +107,6 @@ async def get_exchange_data(exchange_name):
 
 async def get_exchange_last_prices(exchange_name, ignored_symbols, whitelisted_symbols=None):
     tickers, exchange_time = await get_exchange_data(exchange_name)
-    # Only process the top 200 tickers
     print("TotalTickers", len(tickers))
     top_tickers = get_top_200_tickers(tickers)
     last_prices = get_last_prices(exchange_time, top_tickers, ignored_symbols, whitelisted_symbols)
