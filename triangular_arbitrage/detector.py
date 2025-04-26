@@ -1,5 +1,3 @@
-# pylint: disable=W0702, C0325
-
 import ccxt.async_support as ccxt
 from typing import List, Tuple
 from dataclasses import dataclass
